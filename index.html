@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Progress</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+</head>
+<body>
+    <spline-viewer url="https://prod.spline.design/LJw0FXPi4AojgP0j/scene.splinecode" class="background-viewer"></spline-viewer>
+    <div class="container">
+        <div class="app-layout">
+            <div class="timer-card">
+                <div class="header">
+                    <div class="title">
+                        <span class="icon">⚡</span> 
+                        <h1>Session Timer ⚡</h1>
+                    </div>
+                </div>
+
+                <div class="reset-container">
+                    <button class="reset-btn" id="reset-btn" title="Reset All Progress">🔄</button>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="label">SESSIONS</span>
+                        <span class="value" id="sessions">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">HOURS</span>
+                        <span class="value" id="total-hours">0h0m</span>
+                    </div>
+                </div>
+
+                <div class="active-timer" id="active-timer">
+                    <span id="current-timer">00:00:00</span>
+                </div>
+
+                <div class="session-controls" id="session-controls">
+                    <button id="start-btn" class="control-btn primary-btn">▶️ Start Session</button>
+                    <button id="pause-btn" class="control-btn">⏸️ Pause</button>
+                    <button id="stop-session-btn" class="control-btn">⏹️ Stop</button>
+                </div>
+
+                <div class="target">
+                    <div class="target-header">
+                        <span class="target-icon">🎯</span>
+                        <span class="target-label">TARGET HOURS</span>
+                        <div class="target-value-container">
+                            <span class="target-value" id="target-value">200 h 0 m</span>
+                            <button class="edit-btn" id="edit-target-btn" title="Edit Target Hours">✏️</button>
+                        </div>
+                        <div class="target-input-container">
+                            <input type="number" id="target-hours-input" class="target-input" min="0" max="9999" placeholder="Hours">
+                            <input type="number" id="target-minutes-input" class="target-input" min="0" max="59" placeholder="Minutes">
+                            <button class="save-target-btn" id="save-target-btn">Save</button>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" id="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="progress-label">
+                    <span>PROGRESS</span>
+                </div>
+
+                <div class="history-section">
+                    <h2>Session History</h2>
+                    <div class="history-list" id="history-list">
+                        <!-- History items will be added here dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="notes-card">
+                <div class="notes-header">
+                    <h2>Quotes</h2>
+                    <div class="notes-controls">
+                        <button id="save-notes" class="save-notes-btn" title="Save Quote">💾</button>
+                    </div>
+                </div>
+                <textarea id="notes-area" placeholder="Write your quotes here..."></textarea>
+                <div class="notes-history" id="notes-history">
+                    <!-- Notes history will be added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
